@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<h1>欢迎登录！！</h1>
+<form action="/" method="post">
+    <p>
+        用户名：<input type="text" id="id_username" name="username"  required="required">
+    </p>
+
+    <p>
+        密码：<input type="password" id="pwd_username" name="pwd"  required="required">
+    </p>
+    <p>
+        <input type="button" value="登录">
+        <hr> 我是一条水平线
+        <hr> 我是第二条水平线
+<!--         这里是注释-->
+    </p>
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <a href="http://wwww.baidu.com" target="_blank"> 这是一个超链接</a>
+    <p> 就算修改地址也不影响</p>
+    <a href="{% url 'login' %}" target="_blank">跳转本地登录页面  就算修改地址也不影响</a>
+    <a href="/hello" target="_blank"> 这是一个本地超链接</a>
+    <p>这是一个段落</p>
+    {% load static %}
+    <img src="{% static '/k1.jpeg' %}">本地图片</img>
+<!--    <img src="static/k1.jpeg"/>本地图片-->
+    <img src="https://img0.baidu.com/it/u=3101694723,748884042&fm=26&fmt=auto&gp=0.jpg">网络图片
+    <table>
+
+    <p>日期显示：{{year}} {{month}}</p>
+    <tr>
+        <td bgcolor="red">name</td>
+        <td bgcolor="pink">age</td>
+    </tr>
+    <tr>
+        <td>王磊</td>
+        <td>30</td>
+    </tr>
+    </table>
+    <ol>
+       <li>第一节</li>
+        <li>第二节</li>
+        <li>第三节</li>
+    </ol>
+
+    <ul>
+        <li>男人</li>
+        <li>女人</li>
+        <li>儿童</li>
+    </ul>
+</form>
+</body>
+</html>
