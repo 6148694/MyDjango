@@ -25,15 +25,51 @@ def lianxi (request,age,name):
         "name":name
     }
     return JsonResponse(information)
-def person(request):
+def personalView(request):
     context = {
-        "name":"王磊",
-        "n_namer":"磊子",
-        "age":30,
-        "fancy":["语文","数学","英语","计算机"],
+        "name":"上海-悠悠",
+        "n_name":"",
+        "age":"20",
+        "fancy":["python","django","pytest","ios"],
         "bolg":{
             "url":"http://www.baidu.com",
             "img":"https://img0.baidu.com/it/u=3101694723,748884042&fm=26&fmt=auto&gp=0.jpg"
         }
     }
-    return render("person.html",context=context)
+    class Myblog():
+        def __init__(self):
+            self.wlname = "王磊"
+            self.age = "20"
+        def guanzhu(self):
+            return 500
+        def fensi(self):
+            return 1000
+    myblog = Myblog()
+    context['myblog'] = myblog
+    return render(request,"person.html",context=context)
+#for 取值
+def navlist(request):
+    name_list = [
+        {
+            "type":"科普读物",
+            "value":["宇宙知识","百科知识","科学世界","生物世界"]
+        },
+        {
+            "type":"计算机/网络",
+            "value":["Java","Python","C语言"]
+        },
+        {
+            "type":"建筑",
+            "value":["标准/规范","室内设计","建筑科学","建筑文化"]
+        }
+    ]
+    context = {"name_list":name_list}
+    # context = {
+    #     "name_list":[]
+    # }
+    return render(request,"navigationbar.html",context=context)
+
+def block(request):
+    return render(request,"block.html")
+def chongxie(request):
+    return render(request,"chongxie.html")

@@ -10,11 +10,33 @@
 </div>
 
 <div>
-    <p class="text_gray"> <span>姓名：</span>{{n_name}} </p>
-    <p class="text_gray"> <span>年龄：</span>{{age}} </p>
-        <p class="text_gray"> <span>年龄：</span>{{age}} </p>
+    <p class="text_gray"> <span>姓名：</span>{{n_name | default:"我是一个默认哦"}}  </p>
+    <p class="text_gray"> <span>年龄：</span>{{age | add:10 }} </p>
+        <p class="text_gray"> <span>感兴趣的技术：</span>{{fancy.0}},{{fancy.1}},{{fancy.2}} </p>
+        <p class="text_gray"> <span>第一个技术：</span>{{fancy | first}} </p>
+        <p class="text_gray"> <span>最后一个技术：</span>{{fancy | last}} </p>
+       <p class="text_gray"> <span>长度技术：</span>{{fancy | length}} </p>
+           <p class="text_gray"> <span>拼接：</span>{{fancy | join:"$" }} </p>
+               <p class="text_gray"> <span>safe 关闭HTML转义：</span>{{fancy | safe}} </p>
+{% load myfilter %}
+        <p class="text_gray"> <span>年龄：</span>{{age | replace:"20"}} </p>
+ {% load mytag %}
+        <p class="text_gray"> <span>当前时间是：</span>{% current_time %} </p>
 
 
+</div>
+<h1 class="display-name">通过字典对象取值</h1>
+<div>
+    <p class="text_gray"> <span>博客地址：</span>
+    <a href="{{bolg.url}}"> {{bolg.url}}</a>
+    </p>
+    <p class="text_gray"> <span>头像：</span>
+        <img src="{{bolg.img}}">
+        </p>
+<h1 class="display-name">通过属性，方法取值</h1>
+    <p class="text_gray"> <span>名称：{{myblog.wlname}}</span>
+    <p class="text_gray"> <span>粉丝数：{{myblog.fensi}}</span>
+    <p class="text_gray"> <span>关注数：{{myblog.guanzhu}}</span>
 </div>
 </body>
 </html>

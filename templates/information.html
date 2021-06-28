@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+</head>
+<body>
+<h1>{{name}}</h1>
+<p>姓名：{{n_name}}</p>
+<p>年龄：{{age}}</p>
+{% for i in fancy%}
+<p>感兴趣的技术：{i}</p>
+{% endfor%}
+<h1>通过字典对象取值</h1>
+<p>博客地址：{bolg.url}</p>
+<p>头像：</p>
+<h1>通过属性、方法取值</h1>
+<p>名称：</p>
+<p>关注数：{guanzhu}</p>
+<p>粉丝数：{fensi}</p>
+</body>
+</html>

@@ -23,5 +23,8 @@ urlpatterns = [
     url(r'^login/$', views.login,name="login"),
     #path('lianxi/<age>/<name>/',views.lianxi),
     url(r'^lianxi/(?P<age>[1-10]{2})/(?P<name>[a-z]{2}$)',views.lianxi),
-    url(r"^person/$",views.person)
+    url(r"^person/$",views.personalView),
+    url(r"^navigationbar/$",views.navlist),
+    url(r"^block/$", views.block),
+    url(r"^chongxie/$", views.chongxie)
 ]

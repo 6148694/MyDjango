@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for name in name_list %}
+{% if "计算机" not in name.type %}
+<h1>
+    <span>{{  name.type }}</span>
+</h1>
+{% endif %}
+<!--<h1>-->
+{% for n in name.value %}
+    <span>{{ n }} {% if not forloop.last %} | {% endif %}</span>
+<!--    <span>{{name.value}} </span>-->
+{% endfor %}
+</h1>
+
+{% empty%}
+    <span>暂无</span>
+{% endfor %}
+</body>
+</html>

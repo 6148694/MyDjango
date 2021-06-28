@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "block.html" %}
+
+{% block navlist %}
+{% include "left.html" %}
+{% endblock navlist%}
+
+{% block bodytext %}
+<h1> HTML  教程</h1>
+<p>超文本标记语言</p>
+<p>您可以使用HTML 来建立自己的WEB站点</p>
+<p>在本教程里，你将学习如何使用HTML创建站点</p>
+<h1>重写喽</h1>
+{% endblock bodytext %}
+
+
+</body>
+</html>
